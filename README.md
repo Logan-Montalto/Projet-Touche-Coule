@@ -2,7 +2,7 @@
 
 
 ## Diagramme UML
-Explication :
+__Explication :__
 La partie se lance lorsque le joueur entre son pseudo, celui-ci est contenu dans la classe « joueur ». Le timer/temps du joueur s’enclenche également. La classe « bateaux » défini chaque paramètre propre aux bateaux tels que la taille, la position, l’orientation et le nom. 
 La classe « grille » représentera un objet avec les strings qui correspondront aux types de cases de la grille comme les cases vides, les cases avec la présence d’un bateau et les cases sans bateau.
 A la fin du jeu, un score sera enregistré pour le joueur en fonction des points effectués lors de la partie qui augmenteront et diminueront en fonction des cases sélectionnées depuis la classe « grille ».
