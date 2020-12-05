@@ -8,9 +8,8 @@ Chaque partie génère une grille. La classe « grille » représentera un objet
 A la fin du jeu, un score sera enregistré pour le joueur en fonction des points effectués lors de la partie qui augmenteront et diminueront en fonction des cases sélectionnées depuis la classe « grille ».
 
 
-![diagramme_UML_final](https://user-images.githubusercontent.com/64017390/99940211-00ea3900-2d6c-11eb-827f-fbd1c181b253.jpg)
-
+![diagramme_UML_final](https://user-images.githubusercontent.com/64017390/101242993-72779f00-36fd-11eb-9201-fc10eadef8df.jpg)
 
 
 ## Diagramme d'architecture
-![diagrammeArchitecture_final](https://user-images.githubusercontent.com/64017390/99940221-06478380-2d6c-11eb-9c3d-afefcb7c7acc.jpg)
+![diagrammeArchitecture_final](https://user-images.githubusercontent.com/64017390/101243002-815e5180-36fd-11eb-8d6e-567f48b244d0.jpg)
