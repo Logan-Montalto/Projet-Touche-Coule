@@ -13,7 +13,6 @@ import threading
 grille = creation_grille()
 timer = []
 
-
 """Affichage de la grille"""
 
 def affichage(g):

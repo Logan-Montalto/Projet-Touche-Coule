@@ -12,7 +12,7 @@ class Grille(App):
     def build(self):
         Config.set('graphics', 'width', '600')
         Config.set('graphics', 'height', '600')
-        self.title = 'Tousché-Coulé'
+        self.title = 'Touché-Coulé'
         self.grille = GridLayout(rows=11, cols=11)
         ordre = 0
         for i in range(121):
