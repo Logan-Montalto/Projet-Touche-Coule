@@ -7,6 +7,8 @@ Cours de développement informatique II
 from donnees import creation_grille
 import time
 import keyboard
+import interface
+import threading
 
 grille = creation_grille()
 timer = []
@@ -46,7 +48,7 @@ def init():
     temps()
 
     touche = 0
-    while touche != 14:
+    while touche != 2:
         affichage(grille)
         print()
         chaine = input("Quel est ton coup " + nom + ' ?')
@@ -92,6 +94,8 @@ def fin_jeu():
 
 
 if __name__ == '__main__':
+    thread_interface = threading.Thread(target=interface.start)
+    thread_interface.start()
     init()
     affichage(grille)
     fin_jeu()
