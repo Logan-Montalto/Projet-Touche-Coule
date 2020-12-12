@@ -4,13 +4,13 @@ Groupe de 2TL1-2
 Cours de développement informatique II
 """
 
-from donnees import donnees
+from donnees import creation_grille
 import time
 import keyboard
 import interface
 import threading
 
-grille = donnees.creation_grille()
+grille = creation_grille()
 timer = []
 
 """Affichage de la grille"""
