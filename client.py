@@ -12,14 +12,14 @@ def main():
     return client
 
 
-def gestion_objet():
-    c = main()
+def gestion_objet(c):
     envoie = input("Envoie quelque chose que tu veux : ")
     c.send(pickle.dumps(envoie))  # dumps = compression
     donnees = c.recv(2048)
     msg_recu = pickle.loads(donnees)  # déchiffrer les données, décompression des données
     print(msg_recu)
-    gestion_objet()
+    gestion_objet(c)
 
 if __name__ == '__main__':
-    gestion_objet()
+    c = main()
+    gestion_objet(c)
