@@ -4,13 +4,13 @@ Groupe de 2TL1-2
 Cours de développement informatique II
 """
 
-from donnees import creation_grille
+from donnees import donnees
 import time
 import keyboard
 import interface
 import threading
 
-grille = creation_grille()
+grille = donnees.creation_grille()
 timer = []
 
 """Affichage de la grille"""
@@ -47,7 +47,7 @@ def init():
     temps()
 
     touche = 0
-    while touche != 2:
+    while touche != 14:
         affichage(grille)
         print()
         chaine = input("Quel est ton coup " + nom + ' ?')
