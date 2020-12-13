@@ -79,13 +79,40 @@ class CreationTableau:
             print()
 
 
-
 class DeroulementJeuSolo:
 
-    grille = creation_grille()
     timer = []
 
-    def init(self):
+    def __init__(self):
+        self.__grilles = [[0, 0, 0, 0, 1, 1, 1, 1, 0, 0],
+[0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+[0, 0, 0, 0, 1, 0, 1, 0, 0, 0],
+[0, 0, 0, 0, 1, 0, 1, 0, 0, 0],
+[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+
+    def affichage(self):
+        print()
+        list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+        print("   0 1 2 3 4 5 6 7 8 9")
+        for y in range(10):
+            print(list[y], "|", end='')
+            for x in range(10):
+                if self.__grilles[y][x] == 10:
+                    print('o', end='|')
+                elif self.__grilles[y][x] % 10 == 0 and self.__grilles[y][x] != 0:
+                    print('o', end='|')
+                elif self.__grilles[y][x] > 10 and self.__grilles[y][x] % 10 != 0:
+                    print('x', end='|')
+                else:
+                    print('.', end='|')
+            print()
+
+    def initialisation_jeu(self):
         nom = input("Saisir votre nom : ")
         print()
         print("Bienvenue", nom + '!')
@@ -99,7 +126,7 @@ class DeroulementJeuSolo:
 
         touche = 0
         while touche != 14:
-            affichage(self.grille)
+            self.affichage()
             print()
             chaine = input("Quel est ton coup " + nom + ' ?')
             while len(chaine) != 2 or chaine[0] < 'A' or 'K' <= chaine[0] < 'a' or 'k' <= chaine[0] or chaine[
@@ -111,14 +138,15 @@ class DeroulementJeuSolo:
             y = ord(chaine[0].upper()) - 65
             x = int(chaine[1])
 
-            if 1 < self.grille[y][x] < 6:
+            if 1 < self.__grilles[y][x] < 6:
                 print("Touché !")
                 touche += 1
             else:
                 print("Raté !")
-            self.grille[y][x] += 10
-        affichage(self.grille)
+            self.__grilles[y][x] += 10
+        self.affichage()
         print()
+        self.fin_jeu()
 
     """
     Fonction commençant le timer (t1)
@@ -144,7 +172,7 @@ class DeroulementJeuSolo:
 
 
 creation = CreationTableau
-game = DeroulementJeuSolo
+game = DeroulementJeuSolo()
 
-print(creation.creation_grille())
-print(game)
+
+print(game.initialisation_jeu())
