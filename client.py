@@ -1,6 +1,5 @@
 import socket
 import pickle
-import threading
 
 
 def main():
