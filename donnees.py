@@ -49,3 +49,4 @@ def creation_grille():
             debut_bateau_1, debut_bateau_2, debut_bateau_3, debut_bateau_4 = tirage_bateau()
         grille = place_bateau(grille, taille, debut_bateau_1, debut_bateau_2, debut_bateau_3, debut_bateau_4)
     return grille
+
