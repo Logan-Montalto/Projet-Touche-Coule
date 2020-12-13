@@ -2,6 +2,7 @@ from random import randint
 import keyboard
 import time
 
+
 class CreationTableau:
     def __init__(self):
         self.__grille = [[0] * 10 for i in range(10)]
@@ -78,9 +79,13 @@ class CreationTableau:
             print()
 
 
-class DeroulementJeu:
-    # Introdution au jeu
-    def init():
+
+class DeroulementJeuSolo:
+
+    grille = creation_grille()
+    timer = []
+
+    def init(self):
         nom = input("Saisir votre nom : ")
         print()
         print("Bienvenue", nom + '!')
@@ -90,11 +95,11 @@ class DeroulementJeu:
         rk = keyboard.record(until='Ctrl')
         keyboard.play(rk, speed_factor=1)
 
-        temps()
+        self.temps()
 
         touche = 0
         while touche != 14:
-            affichage(grille)
+            affichage(self.grille)
             print()
             chaine = input("Quel est ton coup " + nom + ' ?')
             while len(chaine) != 2 or chaine[0] < 'A' or 'K' <= chaine[0] < 'a' or 'k' <= chaine[0] or chaine[
@@ -106,22 +111,22 @@ class DeroulementJeu:
             y = ord(chaine[0].upper()) - 65
             x = int(chaine[1])
 
-            if 1 < grille[y][x] < 6:
+            if 1 < self.grille[y][x] < 6:
                 print("Touché !")
                 touche += 1
             else:
                 print("Raté !")
-            grille[y][x] += 10
-        affichage(grille)
+            self.grille[y][x] += 10
+        affichage(self.grille)
         print()
 
     """
     Fonction commençant le timer (t1)
     """
 
-    def temps():
+    def temps(self):
         t1 = time.time()
-        timer.append(t1)
+        self.timer.append(t1)
 
     """
     Fontion de fin de jeu contenant le 2ème timer
@@ -129,12 +134,17 @@ class DeroulementJeu:
     timer final = (temps .time() au début du jeu) - (temps .time() au moment de la fin du jeu)
     """
 
-    def fin_jeu():
+    def fin_jeu(self):
         print("Bien joué, tu as coulé tous les bateaux !")
         t2 = time.time()
-        t = t2 - timer[0]
+        t = t2 - self.timer[0]
         z = round(t, 2)
         print("Tu as mis " + str(z) + " secondes.")
 
-game = Partie()
-print(game.creation_grille())
+
+
+creation = CreationTableau
+game = DeroulementJeuSolo
+
+print(creation.creation_grille())
+print(game)
