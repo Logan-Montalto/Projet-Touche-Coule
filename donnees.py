@@ -3,14 +3,6 @@ from random import randint
 """affiche la grille g en argument"""
 
 
-def affichage(g):
-    for y in range(10):
-        print('|', end='')
-        for x in range(10):
-            print(g[y][x], end='|')
-        print()
-
-
 def tirage_bateau():
     # coordonnées du début
     debut_bateau_1 = randint(0, 9)

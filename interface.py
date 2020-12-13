@@ -5,7 +5,7 @@ from kivy.uix.gridlayout import GridLayout
 
 list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
 
-class Grille(App):
+class GrilleAdversaire(App):
 
     board = []
 
@@ -51,4 +51,4 @@ class Grille(App):
 
 
 def start():
-    Grille().run()
+    GrilleAdversaire().run()
