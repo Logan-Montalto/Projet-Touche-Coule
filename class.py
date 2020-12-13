@@ -17,7 +17,7 @@ class Partie:
             self.__debut_horizontal, self.__debut_vertical = 1, 0  # placement horizontal
         return self.__x, self.__y, self.__debut_horizontal, self.__debut_vertical
 
-    def place_dispo(self, taille):
+    """def place_dispo(self, taille):
         for i in range(taille):
 
             if self.__x < 10 and self.__y < 10:
@@ -35,11 +35,7 @@ class Partie:
                         print("lol")
                         return True
                     else:
-                        return False
-
-
-
-
+                        return False"""
 
     def place_bateau(self, taille):
         for i in range(taille):
@@ -58,8 +54,8 @@ class Partie:
         # tirages des bateaux
         for taille in range(2, 6):  # taille des bateaux de 2 à 5
             self.__x, self.__y, self.__debut_horizontal, self.__debut_vertical = self.tirage_bateau()
-            while self.place_dispo(taille):
-                self.__x, self.__y, self.__debut_horizontal, self.__debut_vertical = self.tirage_bateau()
+            """while self.place_dispo(taille):
+                self.__x, self.__y, self.__debut_horizontal, self.__debut_vertical = self.tirage_bateau()"""
             self.__grille = self.place_bateau(taille)
         self.deplacement()
 
