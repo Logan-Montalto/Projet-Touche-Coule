@@ -43,7 +43,7 @@ class GrilleAdversaire(App):
         for i in range(121):
             if self.board[i].id == event.id:
                 print(event.id)
-                event.background = 'blue'
+                event.background = "blue"
 
 
     def update(self):

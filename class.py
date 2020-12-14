@@ -125,7 +125,7 @@ class DeroulementJeuSolo:
         self.temps()
 
         touche = 0
-        while touche != 14:
+        while touche != 2:
             self.affichage()
             print()
             chaine = input("Quel est ton coup " + nom + ' ?')
@@ -138,7 +138,7 @@ class DeroulementJeuSolo:
             y = ord(chaine[0].upper()) - 65
             x = int(chaine[1])
 
-            if 1 < self.__grilles[y][x] < 6:
+            if self.__grilles[y][x] == 1:
                 print("Touché !")
                 touche += 1
             else:
@@ -173,6 +173,5 @@ class DeroulementJeuSolo:
 
 creation = CreationTableau
 game = DeroulementJeuSolo()
-
 
 print(game.initialisation_jeu())
