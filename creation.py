@@ -1,5 +1,4 @@
 from random import randint
-import keyboard
 import time
 
 
@@ -79,11 +78,10 @@ class CreationTableau:
             print()
 
 
-class DeroulementJeuSolo:
+class DeroulementJeuSolo():
 
-    timer = []
-
-    def __init__(self):
+    def __init__(self, pseudo):
+        self.__pseudo = pseudo
         self.__grilles = [[0, 0, 0, 0, 1, 1, 1, 1, 0, 0],
 [0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
 [0, 0, 0, 0, 1, 0, 1, 0, 0, 0],
@@ -95,7 +93,13 @@ class DeroulementJeuSolo:
 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
-    def affichage(self):
+    @property
+    def pseudo(self):
+        return self.__pseudo
+
+    """Fonction d'affichage de la grille de jeu du mode solo"""
+
+    def affichage_console(self):
         print()
         list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
         print("   0 1 2 3 4 5 6 7 8 9")
@@ -112,39 +116,34 @@ class DeroulementJeuSolo:
                     print('.', end='|')
             print()
 
-    def initialisation_jeu(self):
-        nom = input("Saisir votre nom : ")
-        print()
-        print("Bienvenue", nom + '!')
-        print("Le but est de couler les 4 bateaux le plus rapidement possible. Bonne Chance !")
-        print()
-        print("Tapez la touche 'Ctrl' pour commencer la partie : ")
-        rk = keyboard.record(until='Ctrl')
-        keyboard.play(rk, speed_factor=1)
+    """Fontion d'initialisation du jeu lançant le timer du mode solo"""
 
+    def initialisation_jeu(self):
+
+        self.timer = []
         self.temps()
 
         touche = 0
-        while touche != 2:
-            self.affichage()
+        while touche != 14:
+            self.affichage_console()
             print()
-            chaine = input("Quel est ton coup " + nom + ' ?')
+            chaine = input("Quel est ton coup " + self.__pseudo + ' ?')
             while len(chaine) != 2 or chaine[0] < 'A' or 'K' <= chaine[0] < 'a' or 'k' <= chaine[0] or chaine[
                 1] < '0' or \
                     chaine[1] > '9':
                 print("Veuillez entrer une lettre et un chiffre")
-                chaine = input("Quel est ton coup " + nom + ' ?')
+                chaine = input("Quel est ton coup " + self.__pseudo + ' ?')
             print("Tu as joué", chaine[0].upper() + chaine[1])
             y = ord(chaine[0].upper()) - 65
             x = int(chaine[1])
 
-            if self.__grilles[y][x] == 1:
+            if 1 < self.__grilles[y][x] < 6:
                 print("Touché !")
                 touche += 1
             else:
                 print("Raté !")
             self.__grilles[y][x] += 10
-        self.affichage()
+        self.affichage_console()
         print()
         self.fin_jeu()
 
@@ -171,7 +170,6 @@ class DeroulementJeuSolo:
 
 
 
-creation = CreationTableau
-game = DeroulementJeuSolo()
+creations = CreationTableau()
 
-print(game.initialisation_jeu())
+
