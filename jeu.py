@@ -1,8 +1,8 @@
-import creation
+import solo
 
 
 def welcome_player_console():
-    player = creation.DeroulementJeuSolo(input("Saisir votre nom : "))
+    player = solo.DeroulementJeuSolo(input("Saisir votre nom : "))
     print(f"Bienvenue {player.pseudo} !")
     print(f"Le but est de couler les 4 bateaux le plus rapidement possible. Bonne Chance !")
     print()

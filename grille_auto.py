@@ -136,16 +136,5 @@ class CreationTableauAuto:
                     print(str(self.__grille[y][x]), end='|')
             print()
 
-
-
-
-creation = CreationTableauAuto()
-
-
-print(creation.creation_grille())
-print(creation.affichage_grille())
-print(creation.affichage())
-
-
-
-
+    def recup_grille(self):
+        return self.__grille
