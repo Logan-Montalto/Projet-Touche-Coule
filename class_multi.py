@@ -7,11 +7,9 @@ class Multi:
         self.__tableau = tableau
         self.__jeu_fini = False
 
-
-    def initialisation_jeu(self, pseudo, move):
+    def initialisation_jeu(self, move):
         """Class method docstrings go here."""
 
-        # touche = 0
         ok = False
         while True:
             if len(move) != 2 or move[0] < 'A' or 'K' <= move[0] < 'a' or 'k' <= move[0] or move[1] < '0' or move[
@@ -30,7 +28,6 @@ class Multi:
                         ok = True
                         self.__jeu_fini = True
                         break
-                    # touche += 1
                 else:
                     print("Raté !")
                 self.__tableau[y][x] += 10
