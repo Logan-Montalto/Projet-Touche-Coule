@@ -2,6 +2,7 @@ from random import randint
 
 
 class CreationTableauAuto:
+    """Class docstrings go here."""
 
     def __init__(self):
         self.__grille = [[0] * 10 for i in range(10)]
@@ -12,6 +13,8 @@ class CreationTableauAuto:
         return self.__grille
 
     def tirage_bateau(self):
+        """Class method docstrings go here."""
+
         # coordonnées du début
 
         self.__x = randint(0, 9)
@@ -22,11 +25,7 @@ class CreationTableauAuto:
             self.__debut_horizontal, self.__debut_vertical = 1, 0  # placement horizontal
 
     def place_bateau_tableau(self, taille):
-        """
-
-                PRE : ?
-                POST : ?
-                """
+        """Class method docstrings go here."""
 
         for i in range(taille):
             if i == 0:
@@ -37,11 +36,8 @@ class CreationTableauAuto:
                 self.__tableau.append([self.__x, self.__y])
 
     def changement(self, ind):
-        """
+        """Class method docstrings go here."""
 
-                PRE : ?
-                POST : ?
-                """
 
         for u in ind:
             self.__tableau.pop(u)
@@ -96,6 +92,8 @@ class CreationTableauAuto:
         self.place_bateau_grille()
 
     def place_bateau_grille(self):
+        """Class method docstrings go here."""
+
         compteur = 0
         for i in range(2, 6):
             taille = i
@@ -104,6 +102,8 @@ class CreationTableauAuto:
                 compteur += 1
 
     def creation_grille(self):
+        """Class method docstrings go here."""
+
         # tirages des bateaux
         self.__tableau = []
         self.__grille = [[0] * 10 for i in range(10)]
@@ -116,10 +116,14 @@ class CreationTableauAuto:
             self.creation_grille()
 
     def affichage_grille(self):
+        """Class method docstrings go here."""
+
         for i in self.__grille:
             print(i)
 
     def affichage(self):
+        """Class method docstrings go here."""
+
         print()
         list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
         print("   0 1 2 3 4 5 6 7 8 9")
@@ -137,4 +141,6 @@ class CreationTableauAuto:
             print()
 
     def recup_grille(self):
+        """Class method docstrings go here."""
+
         return self.__grille
