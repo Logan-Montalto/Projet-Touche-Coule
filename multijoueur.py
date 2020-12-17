@@ -2,11 +2,11 @@ from grille_humaine import CreationGrillehuman
 import serveur
 import client
 
+
 def start_multi():
     jeu_human = CreationGrillehuman()
     taille = 2
     jeu_human.affichage()
-    liste = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
     while True:
         print(f"la taille du bateau est de {taille}")
 
@@ -26,7 +26,6 @@ def choix_mode():
         serveur.start_serveur()
     else:
         client.start_client()
-
 
 
 if __name__ == '__main__':
