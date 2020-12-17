@@ -7,7 +7,7 @@ class Multi:
         self.__tableau = tableau
         self.__jeu_fini = False
 
-    def initialisation_jeu(self, move):
+    def initialisation_jeu(self, pseudo, move):
         """Class method docstrings go here."""
 
         ok = False
@@ -24,7 +24,7 @@ class Multi:
                 if 1 < self.__tableau[y][x] < 6:
                     print("Touché !")
                     if self.check():
-                        print("T'as gagné !")
+                        print("Tu as gagné !")
                         ok = True
                         self.__jeu_fini = True
                         break
