@@ -1,16 +1,20 @@
 class CreationGrillehuman:
+    """Class docstrings go here."""
 
     def __init__(self):
+        """Class method docstrings go here."""
+
         self.__grille_human = [[0] * 10 for i in range(10)]
         self.__tableau_human = []
         self.__nombre_bateau = 0
-
 
     @property
     def grille(self):
         return self.__grille_human
 
     def placement(self, position_debut, position_fin, taille):
+        """Class method docstrings go here."""
+
         liste = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
         for i in range(len(liste)):
             if position_debut[0] == liste[i]:
@@ -47,6 +51,8 @@ class CreationGrillehuman:
             return True
 
     def check(self, position_debut, position_fin, taille):
+        """Class method docstrings go here."""
+
         ok = True
         a = position_debut[0]
         c = position_debut[1]
@@ -64,7 +70,8 @@ class CreationGrillehuman:
                     a = position_fin[0]
                     c = position_fin[1]
 
-            if self.__grille_human[position_debut[0]][position_debut[1]] != 0 or self.__grille_human[position_fin[0]][position_fin[1]] != 0:
+            if self.__grille_human[position_debut[0]][position_debut[1]] != 0 or self.__grille_human[position_fin[0]][
+                position_fin[1]] != 0:
                 ok = False
             ajout = taille - 1
 
@@ -77,11 +84,14 @@ class CreationGrillehuman:
                         ok = False
         return ok
 
-
     def affichage_grille(self):
+        """Class method docstrings go here."""
+
         return self.__grille_human
 
     def affichage(self):
+        """Class method docstrings go here."""
+
         print()
         list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
         print("   0 1 2 3 4 5 6 7 8 9")
