@@ -4,6 +4,10 @@ import client
 
 
 def start_multi():
+    """La fonction permet de placer 4 bateaux de tailles différentes sur une grille vierge
+
+    :return: -
+    """
     jeu_human = CreationGrillehuman()
     taille = 2
     jeu_human.affichage()
@@ -21,12 +25,12 @@ def start_multi():
 
 
 def choix_mode():
+    """La fonction permet de démarrer la connexion serveur ou la connexion client
+
+    :return: -
+    """
     s = input("Quel connexion ? (serveur ou client) : ")
     if s == "serveur":
         serveur.start_serveur()
     else:
         client.start_client()
-
-
-if __name__ == '__main__':
-    choix_mode()

@@ -1,14 +1,26 @@
 class Multi:
-    """Class docstrings go here."""
+    """Classe représentant le déroulement du jeu multi
+
+            PRE: -
+            POST: -
+            """
 
     def __init__(self, tableau):
-        """Class method docstrings go here."""
+        """Fonction basée sur la création d'un tableau
+
+        PRE: -
+        POST: Récupère un tableau par l'appel de la classe
+        """
 
         self.__tableau = tableau
         self.__jeu_fini = False
 
     def initialisation_jeu(self, pseudo, move):
-        """Class method docstrings go here."""
+        """Fonction d'initialisation du jeu
+
+        PRE: Les conditions sont reprises dans le while
+        POST: Renvoie un boolean
+        """
 
         ok = False
         while True:
@@ -36,7 +48,11 @@ class Multi:
         return ok
 
     def affichage_bateau(self):
-        """Class method docstrings go here."""
+        """Défini l'affichage de la grille avec les bateaux
+
+        PRE: -
+        POST: -
+        """
 
         print()
         list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
@@ -55,7 +71,11 @@ class Multi:
             print()
 
     def affichage_cache(self):
-        """Class method docstrings go here."""
+        """Défini l'affichage de la grille avec les bateaux cachés
+
+        PRE: -
+        POST: -
+        """
 
         print()
         list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
@@ -74,7 +94,11 @@ class Multi:
             print()
 
     def check(self):
-        """Class method docstrings go here."""
+        """Vérifie l'input de la fonction initialisation_jeu()
+
+        PRE: -
+        POST: Renvoie un boolean
+        """
 
         compteur = 0
         for y in range(10):
@@ -87,4 +111,11 @@ class Multi:
             return False
 
     def winner(self):
+        """Si renvoie True = partie s'arrête
+        si renvoie False = partie continue
+        par défaut = False
+
+        PRE: -
+        POST: Renvoie un boolean
+        """
         return self.__jeu_fini

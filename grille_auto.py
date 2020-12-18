@@ -5,6 +5,8 @@ class CreationTableauAuto:
     """Class docstrings go here."""
 
     def __init__(self):
+        """Constructeur de la classe CreationTableauAuto"""
+
         self.__grille = [[0] * 10 for i in range(10)]
         self.__tableau = []
 
@@ -37,7 +39,6 @@ class CreationTableauAuto:
 
     def changement(self, ind):
         """Class method docstrings go here."""
-
 
         for u in ind:
             self.__tableau.pop(u)
