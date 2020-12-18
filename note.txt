@@ -1,0 +1,5 @@
+- Changer property
+- Changer variables privées et mettre certaines en publiques,
+- récupérer variables privées grâce à property
+
+- Diviser file en sous-dossier
